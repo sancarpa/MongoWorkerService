@@ -1,0 +1,13 @@
+#services:
+#  worker1:
+#    build: .
+
+services:
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
+  worker:
+    build: .
+    depends_on:
+      - mongo
